@@ -1,0 +1,198 @@
+.skillsSection {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skillsSection::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(106, 17, 203, 0.05) 0%, transparent 70%);
+    animation: float 15s infinite linear;
+    z-index: 0;
+  }
+  
+  .skillsSection::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37, 117, 252, 0.05) 0%, transparent 70%);
+    animation: float 20s infinite linear reverse;
+    z-index: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .sectionHeading {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+    font-weight: 700;
+    background: linear-gradient(90deg, #000000 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .sectionHeading::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 2px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.2rem;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .skillCategory {
+    flex: 1 1 300px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .skillCategory::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+  }
+  
+  .skillCategory:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .categoryHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .categoryIcon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .skillCategory h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .skillCategory ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skillCategory li {
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    color: #4a5568;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .skillDot {
+    position: absolute;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    transition: all 0.3s ease;
+  }
+  
+  .skillCategory li:hover {
+    color: #6a11cb;
+    transform: translateX(5px);
+  }
+  
+  .skillCategory li:hover .skillDot {
+    transform: scale(1.5);
+    background: #6a11cb;
+  }
+  
+  @media (max-width: 768px) {
+    .skillsSection {
+      padding: 4rem 1.5rem;
+    }
+    
+    .sectionHeading {
+      font-size: 2.2rem;
+    }
+    
+    .skillCategory {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .skillsContainer {
+      flex-direction: column;
+    }
+    
+    .skillCategory {
+      flex: 1 1 auto;
+    }
+  }

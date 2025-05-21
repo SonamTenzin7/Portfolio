@@ -1,0 +1,90 @@
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.6rem 2.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .button.gradient {
+    background: linear-gradient(130deg, #00ffc8, #2196f3);
+    color: white;
+    box-shadow: 0 8px 20px #00ffc8aa;
+  }
+  
+  .button.gradient::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, #00ffc8AA, #2196f3AA, #00ffc8AA);
+    animation: shine 3s linear infinite;
+    filter: blur(20px);
+    opacity: 0.6;
+    z-index: 0;
+    border-radius: 50px;
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: rotate(0deg) translateX(0);
+    }
+    100% {
+      transform: rotate(360deg) translateX(0);
+    }
+  }
+  
+  .button.gradient:hover, .button.gradient:focus {
+    box-shadow: 0 0 30px 5px #00ffc8;
+    background: linear-gradient(130deg, #00fff1, #3da0ff);
+  }
+  
+  .button.outline {
+    color: #00ffc8;
+    background: transparent;
+    border: 2px solid #00ffc8;
+    box-shadow: 0 0 15px #00ffc8aa inset;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .button.outline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 255, 200, 0.15);
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: -1;
+  }
+  
+  .button.outline:hover::before, .button.outline:focus::before {
+    width: 150%;
+    height: 300%;
+  }
+  
+  .button.outline:hover, .button.outline:focus {
+    background: rgba(0, 255, 200, 0.08);
+    box-shadow: 0 0 30px #00ffc8;
+    color: #00fff1;
+  }
+  
+  
+  

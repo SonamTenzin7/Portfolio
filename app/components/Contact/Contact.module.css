@@ -1,0 +1,215 @@
+.contactSection {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  color: #2d3748;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(106, 17, 203, 0.05) 0%, transparent 70%);
+  animation: float 15s infinite linear;
+  z-index: 0;
+}
+
+.contactSection::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(37, 117, 252, 0.05) 0%, transparent 70%);
+  animation: float 20s infinite linear reverse;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sectionHeading {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 4rem;
+  position: relative;
+  color: #2d3748;
+  font-weight: 700;
+  background: linear-gradient(90deg, #000000 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sectionHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  border-radius: 2px;
+  display: block;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contactInfo {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contactInfo:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contactInfo h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  color: #2d3748;
+}
+
+.contactInfo h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  border-radius: 2px;
+}
+
+.contactInfo p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #4a5568;
+}
+
+.contactInfo p svg {
+  margin-right: 10px;
+  color: #6a11cb;
+}
+
+.contactInfo a {
+  color: #2575fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.contactInfo a:hover {
+  color: #6a11cb;
+}
+
+.contactInfo a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+}
+
+.contactInfo a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.contactForm {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 1rem;
+  background-color: rgba(245, 247, 250, 0.5);
+  border: 1px solid rgba(106, 17, 203, 0.1);
+  border-radius: 8px;
+  font-family: inherit;
+  color: #2d3748;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.3);
+}
+
+.contactForm textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contactForm button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: flex-start;
+}
+
+.contactForm button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+@media (min-width: 768px) {
+  .contactContainer {
+    flex-direction: row;
+  }
+  
+  .contactInfo, .contactForm {
+    flex: 1;
+  }
+}
