@@ -10,6 +10,9 @@ import Navbar from './components/Navbar/Navbar';
 import Experience from './components/Experience/Experience';
 import { motion } from 'framer-motion';
 
+// Import the ChatBot component at the top of your page file
+import ChatBot from './components/ChatBot/ChatBot';
+
 export default function Home() {
   // Animation variants for sections
   const sectionVariants = {

@@ -7,6 +7,11 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      <video autoPlay muted loop className={styles.backgroundVideo}>
+        <source src="/images/BackgroundVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
       <div className={styles.content}>
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
@@ -45,7 +50,7 @@ export default function Hero() {
         >
           <Button 
             text="Download Resume" 
-            onClick={() => window.open('/resume/your-resume.pdf')}
+            onClick={() => window.open('/images/Resume.docx')}
             variant="gradient"
           />
           <Button 
