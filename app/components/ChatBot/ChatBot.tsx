@@ -9,32 +9,7 @@ interface Message {
   content: string;
 }
 
-// Define more specific types for the response
-interface ResponseMetadata {
-  tokenUsage: {
-    completionTokens: number;
-    promptTokens: number;
-    totalTokens: number;
-  };
-  modelName: string;
-  finishReason: string;
-}
-
-interface AIResponseKwargs {
-  content: string;
-  additional_kwargs?: Record<string, unknown>;
-  tool_calls?: Record<string, unknown>[];
-  invalid_tool_calls?: Record<string, unknown>[];
-  usage_metadata?: Record<string, unknown>;
-  response_metadata?: ResponseMetadata;
-}
-
-interface AIResponse {
-  lc?: number;
-  type?: string;
-  id?: string[];
-  kwargs?: AIResponseKwargs;
-}
+// Remove the unused AIResponse interface
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState<boolean>(false);

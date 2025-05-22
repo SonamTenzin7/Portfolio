@@ -12,9 +12,11 @@
     "@langchain/groq": "^0.2.2",
     "@langchain/openai": "^0.5.10",
     "ai": "^4.3.16",
+    "autoprefixer": "^10.4.21",
     "framer-motion": "^12.12.1",
     "langchain": "^0.3.26",
     "next": "15.3.2",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -27,7 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5"
   }
 }
