@@ -3,6 +3,7 @@
 import styles from './Projects.module.css';
 
 export default function ProjectCard({ project }) {
+  // Map project titles to appropriate emoji icons
   const getProjectIcon = (title) => {
     if (title.includes("Facial Recognition")) return "👥";
     if (title.includes("Load Forecasting")) return "⚡";
