@@ -3,32 +3,43 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ChatBot.module.css';
 
+// Define TypeScript interfaces
 interface Message {
   role: 'user' | 'assistant' | 'system';
   content: string;
+}
+
+// Define more specific types for the response
+interface ResponseMetadata {
+  tokenUsage: {
+    completionTokens: number;
+    promptTokens: number;
+    totalTokens: number;
+  };
+  modelName: string;
+  finishReason: string;
+}
+
+interface AIResponseKwargs {
+  content: string;
+  additional_kwargs?: Record<string, unknown>;
+  tool_calls?: Record<string, unknown>[];
+  invalid_tool_calls?: Record<string, unknown>[];
+  usage_metadata?: Record<string, unknown>;
+  response_metadata?: ResponseMetadata;
 }
 
 interface AIResponse {
   lc?: number;
   type?: string;
   id?: string[];
-  kwargs?: {
-    content: string;
-    additional_kwargs?: any;
-    tool_calls?: any[];
-    invalid_tool_calls?: any[];
-    usage_metadata?: any;
-    response_metadata?: any;
-  };
+  kwargs?: AIResponseKwargs;
 }
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([
-    { 
-      role: 'assistant', 
-      content: 'Hi there! 👋 I\'m your portfolio assistant. Ask me anything about the portfolio owner\'s skills, experience, or projects!' 
-    }
+    { role: 'assistant', content: 'Hi there! I\'m your portfolio assistant. Ask me anything about the portfolio owner\'s skills, experience, or projects!' }
   ]);
   const [input, setInput] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);

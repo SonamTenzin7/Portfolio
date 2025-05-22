@@ -1,6 +1,6 @@
 import { ChatGroq } from "@langchain/groq";
 import { type Message } from 'ai';
-import { AIMessageChunk } from "@langchain/core/messages";
+// Remove unused import
 import portfolioContext from '../../utils/portfolioContext';
 
 export const runtime = 'edge';
@@ -8,8 +8,8 @@ export const runtime = 'edge';
 export async function POST(req: Request) {
   try {
     const { messages } = (await req.json()) as { messages: Message[] };
-    const lastMessageContent = messages[messages.length - 1].content;
-
+    // We're not using lastMessageContent anymore since we're passing the full conversation
+    
     // Create a system message with portfolio context
     const systemMessage = `
 You are an AI assistant for a personal portfolio website. 
