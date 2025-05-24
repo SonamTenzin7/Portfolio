@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import styles from './ChatBot.module.css';
+import Image from 'next/image';
 
 // Define TypeScript interfaces
 interface Message {
@@ -119,10 +120,12 @@ export default function ChatBot() {
               >
                 {message.role === 'assistant' && (
                   <div className={styles.avatar}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 8V12L15 15"></path>
-                      <circle cx="12" cy="12" r="10"></circle>
-                    </svg>
+                    <Image 
+                      src="/images/ChatBot.jpg" 
+                      alt="Chat Bot" 
+                      width={50} 
+                      height={50} 
+                    />
                   </div>
                 )}
                 <div className={styles.messageContent}>
@@ -138,10 +141,12 @@ export default function ChatBot() {
             {isLoading && (
               <div className={`${styles.message} ${styles.assistantMessage}`}>
                 <div className={styles.avatar}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 8V12L15 15"></path>
-                    <circle cx="12" cy="12" r="10"></circle>
-                  </svg>
+                  <Image 
+                    src="/images/ChatBot.png" 
+                    alt="Chat Bot" 
+                    width={20} 
+                    height={20} 
+                  />
                 </div>
                 <div className={styles.messageContent}>
                   <div className={styles.loadingDots}>
@@ -184,9 +189,13 @@ export default function ChatBot() {
         onClick={toggleChatbot}
         aria-label="Open chatbot"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
+        <Image 
+          src="/images/ChatBot.jpg" 
+          alt="Chat Bot" 
+          width={80} 
+          height={85} 
+          className={styles.chatbotImage} 
+        />
       </button>
     </div>
   );

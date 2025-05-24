@@ -4,6 +4,7 @@
   color: #2d3748;
   position: relative;
   overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .contactSection::before {

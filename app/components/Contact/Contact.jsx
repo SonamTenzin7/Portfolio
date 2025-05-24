@@ -34,10 +34,10 @@ export default function Contact() {
           </p>
         </div>
         <form onSubmit={handleSubmit} className={styles.contactForm}>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message" required></textarea>
-          <button type="submit">Send Message</button>
+          <input type="text" placeholder="Name" required suppressHydrationWarning={true} />
+          <input type="email" placeholder="Email" required suppressHydrationWarning={true} />
+          <textarea placeholder="Message" required suppressHydrationWarning={true}></textarea>
+          <button type="submit" suppressHydrationWarning={true}>Send Message</button>
         </form>
       </div>
     </section>

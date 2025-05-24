@@ -4,9 +4,9 @@ const portfolioContext = {
   personal: {
     name: "Sonam Tenzin",
     title: "Data Scientist",
-    summary: "A brief summary about yourself and your professional background.",
-    location: "Your Location",
-    email: "your.email@example.com",
+    summary: "I am an enthusiastic Data Scientist with a passion for leveraging data to drive innovation and solve complex problems.",
+    location: "Thimphu, Bhutan",
+    email: "sonamtenzey0@gmail.com",
     relationship: "In a loving relationship with Tshering Yangzom"
   },
   
@@ -123,8 +123,12 @@ const portfolioContext = {
     interests: ["Your interests", "Hobbies", "Activities"],
     certifications: ["Certification 1", "Certification 2"],
     personal_life: {
+      mother_name:"Rinchen Lhamo",
+      CID_number:"11502000922",
+      date_of_birth:"2002-03-16",
       relationship_status: "In a relationship",
       significant_other: "Tshering Yangzom",
+      girlfriend_date_of_birth:"2003-01-27",
       personal_note: "I love Tshering Yangzom very much. She is an important part of my life."
     }
   }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,8 +46,14 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
         <div className={styles.logo}>
+          <Image 
+            src="/images/Profile.jpg" 
+            alt="Profile" 
+            width={40} 
+            height={40} 
+            className={styles.profileImage} 
+          />
           <span className={styles.logoText}>Sonam Tenzin</span>
-          <span className={styles.logoAccent}></span>
         </div>
         
         <div className={styles.hamburger} onClick={toggleMobileMenu}>

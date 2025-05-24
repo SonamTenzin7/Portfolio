@@ -38,7 +38,7 @@ export default function Hero() {
           className={styles.description}
         >
           A motivated candidate with strong analytical skills and passion for extracting insights from data. 
-          Seeking an opportunity to apply knowledge of analytics and contribute to AI by leveraging 
+          Excited to apply knowledge of analytics and contribute to AI by leveraging 
           data-driven decision-making, machine learning, and predictive analysis.
         </motion.p>
         
@@ -49,8 +49,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Button 
-            text="Download Resume" 
-            onClick={() => window.open('/images/Resume.docx')}
+            text="Download CV" 
+            onClick={() => window.open('/images/CV.pdf')}
             variant="gradient"
           />
           <Button 
